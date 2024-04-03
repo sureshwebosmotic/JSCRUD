@@ -1,15 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #337AB7;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+.form{
+  width: 80%;
+  border: 1px solid #B4CEE4;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+}
+.form-head{
+  background-color: #337AB7;
+  border-radius: 4px 4px 0px 0px;
+  border: 1px solid #337AB7;
+}
+h4{
+  margin: 0px;
+  color: white;
+  padding: 10px 0 10px 10px;
+}
+.form-body{
+    margin: 15px 15px 20px 60px;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 16px;
+  text-align: right;
+  padding-right: 25px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 16px;
+}
+.hobbies{
+  margin-bottom: -15px;
+}
+h1{
+    text-align: center;
+}
+.submit-btn{
+    margin-left: 330px;
+}
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+  padding-left: 15px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-body{
+  margin: 15px 15px 25px 15px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
 </head>
-
 <body>
-  <script src='./src/main.js' type="module"></script>
-</body>
 
+<h2>Responsive Form</h2>
+<p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
+
+<div class="container">
+    <h1>Employee</h1>
+    <div class="form">
+        <div class="form-head">
+            <h4>Add Employee</h4>
+        </div>
+        <div class="form-body">
+            <form onsubmit="addData()">
+                <div class="row">
+                  <div class="col-25">
+                    <label><b>Name:</b></label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="name" name="name" placeholder="Enter name">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                      <label><b>Gender:</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="radio" id="male" name="gender" value="Male" checked>
+                      <label>Male</label>
+                      <input type="radio" id="female" name="gender" value="Female">
+                      <label>Female</label>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="dob"><b>Date of birth:</b></label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="email"><b>Email:</b></label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="Enter email">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                      <label for="phone"><b>Phone:</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="phone" name="phone" placeholder="Enter phone">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                      <label><b>Hobbies :</b></label>  
+                    </div>
+                    <div class="col-75">
+                      <input type="checkbox" name="Cricket" id="cricket" value="Cricket">
+                      <label>Cricket</label><br>
+                      <input type="checkbox" name="Chess" id="chess" value="Chess">
+                      <label>Chess</label><br>
+                      <input type="checkbox" name="Music" id="music" value="Music">
+                      <label>Music</label>
+                    </div>
+                </div>
+                <div class="row submit-btn">
+                  <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <h1>Basic</h1>
+    <div class="form">
+        <div class="form-head">
+            <h4>Display</h4>
+        </div>
+        <div class="table-body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>DOB</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Hobbies</th>
+                </tr>
+              </thead>
+              <tbody>
+      
+              </tbody>
+            </table>
+          </div>
+    </div>
+</div>
+</body>
 </html>
+
+<script>
+    var employees = JSON.parse(localStorage.getItem('employees')) || [];
+    // document.onload = showData();
+  
+    function addData() {
+      var name = document.getElementById("name").value;
+      var gender;
+      if (document.getElementById("male").checked){
+          gender = document.getElementById("male").value;
+      } else{
+          gender = "Female";
+      }
+      var dob = document.getElementById("fob").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var hobbies = [];
+      if (document.getElementById("cricket").checked){
+        hobbies.push("Cricket");
+      } if (document.getElementById("chess").checked){
+          hobbies.push("Chess");
+        } if (document.getElementById("music").checked){
+            hobbies.push("Music");
+          }
+      console.log(hobbies);
+      employees.push({
+        name: name,
+        gender: gender,
+        dob: dob,
+        email: email,
+        phone: phone,
+        hobbies: hobbies
+      });
+  
+      localStorage.setItem('employees', JSON.stringify(employees));  
+      showData();
+    }
+  
+    function showData(){
+      var html = "";
+      employees.forEach((element, index) => {
+        html += "<tr>";
+        html += "<td>" + element.name + "</td>";
+        html += "<td>" + element.gender + "</td>";
+        html += "<td>" + element.dob + "</td>";
+        html += "<td>" + element.email + "</td>";
+        html += "<td>" + element.phone + "</td>";
+        html += "<td>" + element.hobbies + "</td>";
+        html += `<td> <button class="delete-btn" onclick="deleteData(${index})"> Delete </button>
+                      <button class="edit-btn" onclick="updateData(${index})"> Edit </button> </td>`;
+        html += "</tr>";
+      });
+      document.querySelector("#table tbody").innerHTML = html;
+    }
+  </script>
+  
