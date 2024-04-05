@@ -1,148 +1,191 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./src/main.js"></script>
   <title>Document</title>
-<style>
-* {
-  box-sizing: border-box;
-}
-input[type=text], input[type=email] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-input[type=submit] {
-  background-color: #337AB7;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: left;
-}
-input[type=submit]:hover {
-  background-color: blue;
-}
-.container {
-  width: 100%;
-  border-radius: 5px;
-  padding: 20px;
-}
-.form{
-  width: 80%;
-  border: 1px solid #B4CEE4;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-}
-.form-head{
-  background-color: #337AB7;
-  border-radius: 4px 4px 0px 0px;
-  border: 1px solid #337AB7;
-}
-h4{
-  margin: 0px;
-  color: white;
-  padding: 10px 0 10px 10px;
-}
-.form-body{
-    margin: 15px 15px 20px 60px;
-}
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 16px;
-  text-align: right;
-  padding-right: 25px;
-}
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 16px;
-}
-.hobbies{
-  margin-bottom: -15px;
-}
-h1{
-    text-align: center;
-}
-.submit-btn{
-    margin-left: 25.3%;
-}
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
-  padding: 10px 15px ;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.table-body, .advance-table-body{
-  margin: 15px 15px 30px 15px;
-}
-.edit-btn {
-  background-color: blueviolet;
-  color: white;
-  padding: 6px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.delete-btn {
-  background-color: red;
-  color: white;
-  padding: 6px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: -47px;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Responsive layout - when the screen is less than 600px wide.*/
-@media screen and (max-width: 600px) {
-  .form-body{
-    margin: 15px 15px 20px 15px;
-  }
-  .submit-btn{
-    width: 100%;
-    margin-left: 2%;
-  }
-  .col-25 {
-    float: left;
-    width: 100%;
-    margin-top: 6px;
-    text-align: left;
-  }
-  .col-75 {
-    float: left;
-    width: 100%;
-    margin-top: 6px;
-  }
-  .edit-btn{
-    margin-bottom: 5px;
-  }
-  .delete-btn {
-    margin-right: 5px;
-  }
-}
-</style>
+    input[type=text],
+    input[type=email] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #337AB7;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+    }
+
+    input[type=submit]:hover {
+      background-color: blue;
+    }
+
+    .container {
+      width: 100%;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .form {
+      width: 80%;
+      border: 1px solid #B4CEE4;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 4px;
+    }
+
+    .form-head {
+      background-color: #337AB7;
+      border-radius: 4px 4px 0px 0px;
+      border: 1px solid #337AB7;
+    }
+
+    h4 {
+      margin: 0px;
+      color: white;
+      padding: 10px 0 10px 10px;
+    }
+
+    .form-body {
+      margin: 15px 15px 20px 60px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 16px;
+      text-align: right;
+      padding-right: 25px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 16px;
+    }
+
+    .hobbies {
+      margin-bottom: -15px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .submit-btn {
+      margin-left: 25.3%;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 10px 15px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-body,
+    .advance-table-body {
+      margin: 15px 15px 30px 15px;
+    }
+
+    .edit-btn {
+      background-color: blueviolet;
+      color: white;
+      padding: 6px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      padding: 6px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: -47px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is greater than 600px wide.*/
+    @media screen and (max-width: 1150px) {
+      .edit-btn {
+        margin-bottom: 5px;
+      }
+
+      .delete-btn {
+        margin-right: 5px;
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide.*/
+    @media screen and (max-width: 600px) {
+      .form-body {
+        margin: 15px 15px 20px 15px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        margin-left: 2%;
+      }
+
+      .col-25 {
+        float: left;
+        width: 100%;
+        margin-top: 6px;
+        text-align: left;
+      }
+
+      .col-75 {
+        float: left;
+        width: 100%;
+        margin-top: 6px;
+      }
+
+      .edit-btn {
+        margin-bottom: 5px;
+      }
+
+      .delete-btn {
+        margin-right: 5px;
+      }
+    }
+  </style>
 </head>
+
 <body onload="onLoad();">
   <div class="container">
     <h1>Employee</h1>
@@ -157,7 +200,7 @@ table {
               <label><b>Name:</b></label>
             </div>
             <div class="col-75">
-              <input type="text" required pattern="[a-zA-Z0-9]{4,20}" id="name" name="name" placeholder="Enter name">
+              <input type="text" required pattern="[a-zA-Z0-9]{4,20}" id="name" placeholder="Enter name">
             </div>
           </div>
           <div class="row">
@@ -165,9 +208,9 @@ table {
               <label><b>Gender:</b></label>
             </div>
             <div class="col-75">
-              <input type="radio" id="male" name="gender" value="Male" checked>
+              <input type="radio" id="male" value="Male" checked>
               <label>Male</label>
-              <input type="radio" id="female" name="gender" value="Female">
+              <input type="radio" id="female" value="Female">
               <label>Female</label>
             </div>
           </div>
@@ -184,7 +227,7 @@ table {
               <label for="email"><b>Email:</b></label>
             </div>
             <div class="col-75">
-              <input type="email" required id="email" name="email" placeholder="Enter email">
+              <input type="email" required id="email" placeholder="Enter email">
             </div>
           </div>
           <div class="row">
@@ -192,19 +235,19 @@ table {
               <label for="phone"><b>Phone:</b></label>
             </div>
             <div class="col-75">
-              <input type="text" pattern="[0-9]{10}" id="phone" name="phone" placeholder="Enter phone">
+              <input type="text" pattern="[0-9]{10}" id="phone" placeholder="Enter phone">
             </div>
           </div>
           <div class="row">
             <div class="col-25">
-              <label><b>Hobbies :</b></label>  
+              <label><b>Hobbies :</b></label>
             </div>
             <div class="col-75">
-              <input type="checkbox" name="Cricket" id="cricket" value="Cricket">
+              <input type="checkbox" id="cricket" value="Cricket">
               <label>Cricket</label><br>
-              <input type="checkbox" name="Chess" id="chess" value="Chess">
+              <input type="checkbox" id="chess" value="Chess">
               <label>Chess</label><br>
-              <input type="checkbox" name="Music" id="music" value="Music">
+              <input type="checkbox" id="music" value="Music">
               <label>Music</label>
             </div>
           </div>
@@ -215,219 +258,40 @@ table {
         </form>
       </div>
     </div>
-      <h1>Basic</h1>
-      <div class="form">
-        <div class="form-head">
-          <h4>Display</h4>
-        </div>
-        <div style="overflow-x:auto;" class="table-body">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>DOB</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Hobbies</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody  id="basicTableData"></tbody>
-          </table>
-        </div>
+    <h1>Basic</h1>
+    <div class="form">
+      <div class="form-head">
+        <h4>Display</h4>
       </div>
-      <h1>Advanced</h1>
-      <div class="form">
-        <div class="form-head">
-          <h4>Display</h4>
-        </div>
-        <div style="overflow-x:auto;" class="advance-table-body">
-          <table>
-            <tbody id="advanceTableData"></tbody>
-          </table>
-        </div>
+      <div style="overflow-x:auto;" class="table-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>DOB</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Hobbies</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="basicTableData"></tbody>
+        </table>
       </div>
+    </div>
+    <h1>Advanced</h1>
+    <div class="form">
+      <div class="form-head">
+        <h4>Display</h4>
+      </div>
+      <div style="overflow-x:auto;" class="advance-table-body">
+        <table>
+          <tbody id="advanceTableData"></tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>
-
-<script>
-  var employees = JSON.parse(localStorage.getItem('employees')) || [];
-  function onLoad(){
-    showBasicData();
-    showAdvanceData();
-  }
-  
-  function submitData() {
-    event.preventDefault();
-    var employeeId = document.getElementById("employee-id").value;
-    console.log(employeeId);
-    if(employeeId==""){
-      addData();
-    }else{
-      updateData();
-    }
-  }
-
-  function addData() {
-    var employeeId;
-    var name = document.getElementById("name").value;
-    var gender;
-    if (document.getElementById("male").checked){
-        gender = document.getElementById("male").value;
-    } else{
-      gender = "Female";
-    }
-    var dob = document.getElementById("dob").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var hobbies = [];
-    if (document.getElementById("cricket").checked){
-      hobbies.push("Cricket");
-    } if (document.getElementById("chess").checked){
-      hobbies.push("Chess");
-    } if (document.getElementById("music").checked){
-      hobbies.push("Music");
-    }
-    console.log(hobbies);
-      
-    employees.push({
-      employeeId: (employees.length+1).toString(),
-      name: name,
-      gender: gender,
-      dob: dob,
-      email: email,
-      phone: phone,
-      hobbies: hobbies
-    });
-  
-    localStorage.setItem('employees', JSON.stringify(employees));  
-    showBasicData();
-    showAdvanceData();
-  }
-  
-  function updateData() {
-    var employeeId = document.getElementById("employee-id").value;
-    employees.forEach((element) =>{
-      if(employeeId==element.employeeId){
-        element.name = document.getElementById("name").value;
-        element.dob = document.getElementById("dob").value;
-        element.email = document.getElementById("email").value;
-        element.phone = document.getElementById("phone").value;
-
-        if (document.getElementById("male").checked){
-          element.gender = document.getElementById("male").value;
-        } else{
-          element.gender = "Female";
-        }
-
-        element.hobbies = [];
-        if (document.getElementById("cricket").checked){
-          element.hobbies.push("Cricket");
-        } if (document.getElementById("chess").checked){
-          element.hobbies.push("Chess");
-        } if (document.getElementById("music").checked){
-          element.hobbies.push("Music");
-        }
-      }
-    });
-    localStorage.setItem('employees', JSON.stringify(employees));  
-    showBasicData();
-    showAdvanceData();
-  }
-
-  function showBasicData(){
-    var html = "";
-    employees.forEach((element, index) => {
-      html += "<tr>";
-      html += "<td>" + element.name + "</td>";
-      html += "<td>" + element.gender + "</td>";
-      html += "<td>" + element.dob + "</td>";
-      html += "<td>" + element.email + "</td>";
-      html += "<td>" + element.phone + "</td>";
-      html += "<td>" + element.hobbies + "</td>";
-      html += `<td> <button class="edit-btn" onclick="selectData(${index})"> Edit </button>
-                    <button class="delete-btn" onclick="deleteData(${index})"> Delete </button></td>`;
-      html += "</tr>";
-    });
-    document.querySelector(".table-body table tbody").innerHTML = html;
-  }
-  
-  function showAdvanceData(){
-    let columnNumber = 0;
-    let html = `<tr id="nameRow">
-                  <th>Name</th>
-                </tr>
-                <tr id="genderRow">
-                  <th>Gender</th>
-                </tr>
-                <tr id="dobRow">
-                  <th>DOB</th>
-                </tr>
-                <tr id="emailRow">
-                  <th>Email</th>
-                </tr>
-                <tr id="phoneRow">
-                  <th>Phone</th>
-                </tr>
-                <tr id="hobbiesRow">
-                  <th>Hobbies</th>
-                </tr>
-                <tr id="actionRow">
-                  <th>Action</th>
-                </tr>`;
-                
-    document.querySelector(".advance-table-body table tbody").innerHTML = html;           
-    employees.forEach((element, index) =>{
-      columnNumber++;
-      let nameCell = document.getElementById("nameRow").insertCell(columnNumber);
-      nameCell.innerHTML = element.name;
-      let genderCell = document.getElementById("genderRow").insertCell(columnNumber);
-      genderCell.innerHTML = element.gender;
-      let dobCell = document.getElementById("dobRow").insertCell(columnNumber);
-      dobCell.innerHTML = element.dob;
-      let emailCell = document.getElementById("emailRow").insertCell(columnNumber);
-      emailCell.innerHTML = element.email;
-      let phoneCell = document.getElementById("phoneRow").insertCell(columnNumber);
-      phoneCell.innerHTML = element.phone;
-      let hobbiesCell = document.getElementById("hobbiesRow").insertCell(columnNumber);
-      hobbiesCell.innerHTML = element.hobbies;
-      let actionCell = document.getElementById("actionRow").insertCell(columnNumber);
-      actionCell.innerHTML = `<button class="edit-btn" onclick="selectData(${index})"> Edit </button>
-                              <button class="delete-btn" onclick="deleteData(${index})"> Delete </button></td>`;
-    });
-  
-  }
-
-  function deleteData(index) {
-    employees.splice(index, 1);
-    localStorage.setItem('employees', JSON.stringify(employees));
-    showBasicData();
-    showAdvanceData();
-  }
-
-  function selectData(index){
-    document.getElementById("form").reset();
-    document.getElementById("name").value = employees[index].name;
-    document.getElementById("dob").value = employees[index].dob;
-    document.getElementById("email").value = employees[index].email;
-    document.getElementById("phone").value = employees[index].phone;
-    document.getElementById("employee-id").value = employees[index].employeeId;
-    if (employees[index].gender=="Male"){
-      document.getElementById("male").checked = true;
-    } else{
-      document.getElementById("female").checked = true;
-    }
-    employees[index].hobbies.forEach((element, index) => {
-      console.log(element);
-      if (element=="Cricket"){
-        document.getElementById("cricket").checked = true;
-      } if (element=="Chess"){
-        document.getElementById("chess").checked = true;
-      } if (element=="Music"){
-        document.getElementById("music").checked = true;
-      }
-    })
-  }
-</script>
