@@ -200,7 +200,7 @@
               <label><b>Name:</b></label>
             </div>
             <div class="col-75">
-              <input type="text" required pattern="[a-zA-Z0-9]{4,20}" id="name" placeholder="Enter name">
+              <input type="text" required pattern="[a-zA-Z0-9]{4,20}" id="name" name="name" placeholder="Enter name">
             </div>
           </div>
           <div class="row">
@@ -208,9 +208,9 @@
               <label><b>Gender:</b></label>
             </div>
             <div class="col-75">
-              <input type="radio" id="male" value="Male" checked>
+              <input type="radio" id="male" name="gender" value="Male" checked>
               <label>Male</label>
-              <input type="radio" id="female" value="Female">
+              <input type="radio" id="female" name="gender" value="Female">
               <label>Female</label>
             </div>
           </div>
@@ -227,7 +227,7 @@
               <label for="email"><b>Email:</b></label>
             </div>
             <div class="col-75">
-              <input type="email" required id="email" placeholder="Enter email">
+              <input type="email" required id="email" name="email" placeholder="Enter email">
             </div>
           </div>
           <div class="row">
@@ -235,7 +235,7 @@
               <label for="phone"><b>Phone:</b></label>
             </div>
             <div class="col-75">
-              <input type="text" pattern="[0-9]{10}" id="phone" placeholder="Enter phone">
+              <input type="text" pattern="[0-9]{10}" id="phone" name="phone" placeholder="Enter phone">
             </div>
           </div>
           <div class="row">
@@ -243,11 +243,11 @@
               <label><b>Hobbies :</b></label>
             </div>
             <div class="col-75">
-              <input type="checkbox" id="cricket" value="Cricket">
+              <input type="checkbox" id="cricket" name="cricket" value="Cricket">
               <label>Cricket</label><br>
-              <input type="checkbox" id="chess" value="Chess">
+              <input type="checkbox" id="chess" name="chess" value="Chess">
               <label>Chess</label><br>
-              <input type="checkbox" id="music" value="Music">
+              <input type="checkbox" id="music" name="music" value="Music">
               <label>Music</label>
             </div>
           </div>
