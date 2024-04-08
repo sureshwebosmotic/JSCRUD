@@ -1,15 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./src/main.js"></script>
   <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    input[type=email] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #337AB7;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+    }
+
+    input[type=submit]:hover {
+      background-color: blue;
+    }
+
+    .container {
+      width: 100%;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .form {
+      width: 80%;
+      border: 1px solid #B4CEE4;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 4px;
+    }
+
+    .form-head {
+      background-color: #337AB7;
+      border-radius: 4px 4px 0px 0px;
+      border: 1px solid #337AB7;
+    }
+
+    h4 {
+      margin: 0px;
+      color: white;
+      padding: 10px 0 10px 10px;
+    }
+
+    .form-body {
+      margin: 15px 15px 20px 60px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 16px;
+      text-align: right;
+      padding-right: 25px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 16px;
+    }
+
+    .hobbies {
+      margin-bottom: -15px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .submit-btn {
+      margin-left: 25.3%;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 10px 15px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-body,
+    .advance-table-body {
+      margin: 15px 15px 30px 15px;
+    }
+
+    .edit-btn {
+      background-color: blueviolet;
+      color: white;
+      padding: 6px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      padding: 6px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: -47px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is greater than 600px wide.*/
+    @media screen and (max-width: 1150px) {
+      .edit-btn {
+        margin-bottom: 5px;
+      }
+
+      .delete-btn {
+        margin-right: 5px;
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide.*/
+    @media screen and (max-width: 600px) {
+      .form-body {
+        margin: 15px 15px 20px 15px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        margin-left: 2%;
+      }
+
+      .col-25 {
+        float: left;
+        width: 100%;
+        margin-top: 6px;
+        text-align: left;
+      }
+
+      .col-75 {
+        float: left;
+        width: 100%;
+        margin-top: 6px;
+      }
+
+      .edit-btn {
+        margin-bottom: 5px;
+      }
+
+      .delete-btn {
+        margin-right: 5px;
+      }
+    }
+  </style>
 </head>
 
-<body>
-  <script src='./src/main.js' type="module"></script>
+<body onload="onLoad();">
+  <div class="container">
+    <h1>Employee</h1>
+    <div class="form">
+      <div class="form-head">
+        <h4>Add Employee</h4>
+      </div>
+      <div class="form-body">
+        <form id="form" onsubmit="submitData()">
+          <div class="row">
+            <div class="col-25">
+              <label><b>Name:</b></label>
+            </div>
+            <div class="col-75">
+              <input type="text" required pattern="[a-zA-Z0-9]{4,20}" id="name" name="name" placeholder="Enter name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label><b>Gender:</b></label>
+            </div>
+            <div class="col-75">
+              <input type="radio" id="male" name="gender" value="Male" checked>
+              <label>Male</label>
+              <input type="radio" id="female" name="gender" value="Female">
+              <label>Female</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="dob"><b>Date of birth:</b></label>
+            </div>
+            <div class="col-75">
+              <input type="text" required id="dob" name="dob" placeholder="dd/mm/yyyy">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="email"><b>Email:</b></label>
+            </div>
+            <div class="col-75">
+              <input type="email" required id="email" name="email" placeholder="Enter email">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="phone"><b>Phone:</b></label>
+            </div>
+            <div class="col-75">
+              <input type="text" pattern="[0-9]{10}" id="phone" name="phone" placeholder="Enter phone">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label><b>Hobbies :</b></label>
+            </div>
+            <div class="col-75">
+              <input type="checkbox" id="cricket" name="cricket" value="Cricket">
+              <label>Cricket</label><br>
+              <input type="checkbox" id="chess" name="chess" value="Chess">
+              <label>Chess</label><br>
+              <input type="checkbox" id="music" name="music" value="Music">
+              <label>Music</label>
+            </div>
+          </div>
+          <div class="row submit-btn">
+            <input type="hidden" id="employee-id">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+    <h1>Basic</h1>
+    <div class="form">
+      <div class="form-head">
+        <h4>Display</h4>
+      </div>
+      <div style="overflow-x:auto;" class="table-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>DOB</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Hobbies</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="basicTableData"></tbody>
+        </table>
+      </div>
+    </div>
+    <h1>Advanced</h1>
+    <div class="form">
+      <div class="form-head">
+        <h4>Display</h4>
+      </div>
+      <div style="overflow-x:auto;" class="advance-table-body">
+        <table>
+          <tbody id="advanceTableData"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
